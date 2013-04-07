@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Just Another Ops Blog]]></title>
-  <link href="http://kevinkarwaski.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Useless Info | Just Another Ops Blog]]></title>
+  <link href="http://kevinkarwaski.github.com/blog/categories/useless-info/atom.xml" rel="self"/>
   <link href="http://kevinkarwaski.github.com/"/>
   <updated>2013-04-07T15:41:56-04:00</updated>
   <id>http://kevinkarwaski.github.com/</id>
@@ -18,7 +18,7 @@
     <link href="http://kevinkarwaski.github.com/blog/2013/04/07/hello-world/"/>
     <updated>2013-04-07T15:30:00-04:00</updated>
     <id>http://kevinkarwaski.github.com/blog/2013/04/07/hello-world</id>
-    <content type="html"><![CDATA[<p>This is my first blog post using Octopress. I really like this blogging engine so far&#8230; more to come. :)</p>
+    <content type="html"><![CDATA[<p>This is my first blog post using Octopress. I really like this blogging engine so far... more to come. :)</p>
 ]]></content>
   </entry>
   
