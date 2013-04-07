@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[kevin.karwaski.com]]></title>
+  <title><![CDATA[Another Ops Blog]]></title>
   <link href="http://kevinkarwaski.github.com/atom.xml" rel="self"/>
   <link href="http://kevinkarwaski.github.com/"/>
-  <updated>2013-04-07T15:02:08-04:00</updated>
+  <updated>2013-04-07T15:13:25-04:00</updated>
   <id>http://kevinkarwaski.github.com/</id>
   <author>
     <name><![CDATA[Kevin Karwaski]]></name>
