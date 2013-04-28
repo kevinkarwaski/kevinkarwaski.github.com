@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>chefconf-2013-raw-notes - kevinkarwaski's Ops Blog</title>
+  <meta name="author" content="Kevin Karwaski">
+
+  
+  <meta name="description" content="Chefconf-2013-raw-notes Apr 28th, 2013 Day 1 keynotes with Facebook and Forester Research Facebook: Scaling config management The Goal: - 4 people &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kevinkarwaski.github.com/chefconf-2013-raw-notes">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="kevinkarwaski's Ops Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">kevinkarwaski's Ops Blog</a></h1>
+  
+    <h2>DevOps ramblings and other marginally useful information. These opinions are my own and do not reflect those of my employer, Fiksu.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kevinkarwaski.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Chefconf-2013-raw-notes</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-28T17:06:00-04:00" pubdate data-updated="true">Apr 28<span>th</span>, 2013</time></p>
+  </header>
+  
+  <hr />
+
+<p>Day 1 keynotes with Facebook and Forester Research</p>
+
+<p>Facebook:</p>
+
+<p>Scaling config management</p>
+
+<p>The Goal:
+ - 4 people
+ - 10k+ hetero systems
+ - service owners make changes (devs)</p>
+
+<ol>
+<li>Building blocks:</li>
+<li>Distributed - everything on the client</li>
+<li>Deterministic - The system you</li>
+<li>Idempotent - only nessesary</li>
+<li>Extensible - tied to internal systems</li>
+<li><p>Flexible - no dictated workflow</p></li>
+<li><p>Configuration as data</p></li>
+<li><p>Flexibility</p></li>
+<li>Adapt to our workflow</li>
+<li>fast proto</li>
+<li>internal assumptions can be changed - easily</li>
+<li>extend in new ways - easily</li>
+</ol>
+
+
+<p>Why Chef?</p>
+
+<p>Easier to see from a problem
+node.save
+ - scale issues with 15k-node cluster
+ - standard solution sucks (disable ohai plugins)</p>
+
+<p> solution: whitelist_node_attrs:
+ - https://github.com/opscode/whitelist-node-attrs</p>
+
+<p> Desired workflow:</p>
+
+<ul>
+<li>provide api for service owners to extent configs</li>
+<li>engs don&#8217;t need to know what they&#8217;re building on</li>
+<li>engs can change their systems without changing anything else</li>
+<li><p>testing should be easy</p></li>
+<li><p>Moving idempotency up</p></li>
+<li> stale idepotentent records</li>
+<li> the removal of the resource should remove it from the node</li>
+</ul>
+
+
+<p> Chef Infrastructure:</p>
+
+<ul>
+<li>OSC and OPC</li>
+<li> bought private chef for support&#8230;</li>
+</ul>
+
+
+<p>  Required:
+   - stateless chef servers</p>
+
+<pre><code>- no search
+- no data persistence
+- no databags
+</code></pre>
+
+<ul>
+<li> separate failure domains</li>
+<li> tiered model</li>
+</ul>
+
+
+<p>  all stats and errors shipped to internal monitoring solution</p>
+
+<p>  Chef client is crond at 15 minutes (15 min splay)</p>
+
+<p>  cpu dropped from 80% to 67% to register 15k nodes in OSC&#8230; yeah.</p>
+
+<p>  Lessosns:
+   - idempotent sys > idempotent records
+   - Full lang > DSL
+   - scale is more that just num of clients
+   - easy abstraction is critcal
+   - testing against real systems is usefull and nessessary</p>
+
+<p> Summary:
+  - how many homogen sys can you maintain >> 17k
+  - 4 people of FB ops</p>
+
+<p>Forester Research:</p>
+
+<ul>
+<li>Patterns in IT mirror the industrial revolution.</li>
+<li>Big changes on the horizon</li>
+<li>Economic and complexity driving disruption; can&#8217;t continue</li>
+<li>poorly managed disruption = volatility (business hates this)</li>
+</ul>
+
+
+<p> How&#8217;s it changing?</p>
+
+<ul>
+<li>more industrialized because it&#8217;s predictable</li>
+<li>cost effective (less waste)</li>
+<li>productivity</li>
+<li>managed risk</li>
+</ul>
+
+
+<p> Currently too much risk in IT (traditional)</p>
+
+<p> We are living through the next wave of the idustrial revolution</p>
+
+<ul>
+<li>put discipline in the process</li>
+<li>if it&#8217;s not strrategic, let someone else do it.</li>
+<li>Automate everything</li>
+<li>Adapt the people</li>
+</ul>
+
+
+<p>  Process: Use ITIL as a guide
+   - start with &#8220;low hanging fruit&#8221;
+   - apply to whole service lifecycle
+   - break tradition / use process
+   - don&#8217;t automate unless you have discipline in process!!</p>
+
+<p>  Strategic:
+   - is it innovative? what is innovative?
+   - differentiate business?
+   - is it intellectual grunt work?
+   - Focus on business needs</p>
+
+<p>&#8220;Automation is evolution of trust.&#8221;</p>
+
+<p>Will it replace my job? maybe, but resistance is futile. :)</p>
+
+<p>Systems Administrators are dead.</p>
+
+<hr />
+
+<p>Antipatterns</p>
+
+<p>Number 1 rule:</p>
+
+<ul>
+<li>Nothing replaces good / advanced planning.</li>
+</ul>
+
+
+<p> Adv planning:
+  - what cookbooks should you have
+  - what recipes
+  - roles and their names
+  - how many envs
+  - clusters within env
+  - DB heirarchy</p>
+
+<p> Top 10 anitpatterns:</p>
+
+<ol>
+<li>Giant git repo for chef repo:</li>
+<li><p>mixing rtemoral data with versioned data</p></li>
+<li><p>One giant company cookbook</p></li>
+<li>company is not a top level service</li>
+<li>Huge blast radius on changes</li>
+</ol>
+
+
+<p>  better: more cookbooks are better</p>
+
+<ol>
+<li>Using envs for more than just logical env</li>
+<li><p>don&#8217;t be tempted to</p></li>
+<li><p>Forking community cookbooks</p></li>
+</ol>
+
+
+<p>  better: Rather use app/library cookbook pattern (smpostgresql)</p>
+
+<ol>
+<li>Run list in Role</li>
+<li>Roles aren&#8217;t versioned</li>
+</ol>
+
+
+<p>  better: create a roles cookbook each recipe contains run list.</p>
+
+<ol>
+<li>Disorganized Data bags</li>
+<li>Only two levels</li>
+<li><p>Avoid making enormous</p></li>
+<li><p>Not knowing about or using the chef-shell</p></li>
+<li>IRB + chef primitives</li>
+<li>cookbook devel</li>
+<li>prod debugging</li>
+<li><p>See intro to chef-shell (slideshare)</p></li>
+<li><p>Who&#8217;s afraid of the Big Bad LWRP</p></li>
+<li><p>Myth: they&#8217;re hard to write</p></li>
+<li><p>&#8220;Not invented here&#8221; Syndrome</p></li>
+<li>Bias against using other peoples code</li>
+<li>temptation to write your own</li>
+</ol>
+
+
+<p>  Better: do research / look for what others have done!</p>
+
+<ol>
+<li>The Lone Wolf Chef</li>
+<li>Chef configs apps; get devs involved in writing and maintaining cookbooks.</li>
+<li>Everyone becomes responsible for prod ready.</li>
+</ol>
+
+
+<hr />
+
+<p>TestKitchen</p>
+
+<ul>
+<li>Born out of LDAP testing</li>
+<li>Heavily influcened by TravisCI</li>
+<li><p>started as internal tool</p></li>
+<li><p>Best way to test in on a &#8220;real&#8221; system&#8230; converge a real node.</p></li>
+<li>Gathered requirements for test tool:</li>
+<li>cross plateform</li>
+<li>regressions</li>
+<li>lint / unit</li>
+<li>functional / integration</li>
+<li>Jenkins / CI</li>
+<li>Dev continued</li>
+<li>Limitations:</li>
+<li>Adding new providers</li>
+<li><p>Override local customizations (vagrantfile)</p></li>
+<li><p>JamieCI: the accidental project</p></li>
+<li>created RVM cookbook (converges +40mins)</li>
+<li>Came out of Friday Night Hacks</li>
+<li><p>Make a Vagrantfile to test all platforms (insane!!)</p></li>
+<li><p>Jamie codebase + Test Kitchen name = 1.0+</p></li>
+</ul>
+
+
+<p>Concepts:</p>
+
+<ul>
+<li>based on .kitchen.yml file</li>
+<li>description of testing problem</li>
+<li>declarative and static</li>
+<li>platforms = OS or target system, networking, virtualized, Chef version, etc.</li>
+<li>Contains: name, driver_config, run_list</li>
+<li>Suite: the chef configuration</li>
+<li>name, run_list, attributes</li>
+<li><p>instance = suite + platform</p></li>
+<li><p>Lifecycle activities:</p></li>
+<li>Create</li>
+<li>Converge</li>
+<li>Setup</li>
+<li>Verify</li>
+<li><p>Destroy</p></li>
+<li><p>Instance Actions:</p></li>
+<li>Test</li>
+<li>Driver: implementation of instance actions</li>
+<li>Ship as rubygems</li>
+<li>EC2, vagrant, etc.</li>
+</ul>
+
+
+<p> Dry run:
+  - Install gem
+  - kitchen init
+  - kitchen test</p>
+
+<p> The future:
+  - 3rd party integrations
+  - Documentation</p>
+
+<hr />
+
+<p>Chef in the Cloud</p>
+
+<p>mashion.net</p>
+
+<ul>
+<li>Make buckets private</li>
+<li><p>USE IAM ROLES</p></li>
+<li><p>Formerly used Librarian</p></li>
+<li>ran single instances</li>
+<li>AMI MUST SUPPORT USERDATA</li>
+<li>Use AS groups always. Always. Even for singletons!!</li>
+</ul>
+
+
+<p> Userdata used to:
+  - Install s3cmd
+  - Install chef
+  - Download cookbooks from s3
+  - run chef-solo
+  - The good: no spf, everything mostly automated
+  - The bad: no envs, config changes were painful, multi-apps</p>
+
+<p>The move to chef-server:
+ - wanted env support
+ - and chef search
+ - moved to VPC
+ - ELB in VPC
+ - NAT box in private VPC
+ - USE BIG NAT BOXES
+ - Routing tables are hard / easy to fuck up.
+ - Switched over to Berkshelf / Jenkins integration.</p>
+
+<p>Cloned Asgard in Ruby / CLI / not open-sourced</p>
+
+<ul>
+<li>ELBs + ASGs make rolling deploys easy</li>
+<li><p>Using Blue / Green deploys</p></li>
+<li><p>convergence failures due to hostname collisions</p></li>
+<li>Env issues bases on lack of versioning, retreated attributes to cookbooks and not in envs.</li>
+<li>used combo of node/client delete in runlevel 6 and ran a node GC collector</li>
+</ul>
+
+
+<p> Using RPMs and AMIs!!</p>
+
+<p>  Why?
+  - Reduce time to Boot
+  - Build RPMs / cookbooks quickly (using fpm and internal YUM repo)
+  - ensure convergence
+  - Build AMI for app-version
+  - Promote AMIs via environments
+  - Back to chef-solo
+  - one cookbook, installs rpms</p>
+
+<p>  Using Netflix Cloudstack:
+  - Archaius
+  - Eureka
+  - Asgard (use groovy to update userdata&#8230; not fun.)</p>
+
+<p>  Run chef to create and bundle AMI.
+   - Super fast boot time (15 seconds to be operational)
+   - Rolling deploys are easy
+   - No restarts on service discovery</p>
+
+<hr />
+
+<p>Cookbook Refactoring</p>
+
+<p>Case Study:
+Host file cookbook</p>
+
+<p>USE Chefspec&#8230; it&#8217;s really fucking fast.</p>
+
+<p>Every cookbook should fully manage itself.</p>
+
+<hr />
+
+<p>The Berkshelf Way</p>
+
+<p>Jamie Windsor</p>
+
+<p>What is it?
+ - CL tool
+ - scm tool
+ - pack manager
+ - partial knife replacement</p>
+
+<p>berks init to convert current cookbooks</p>
+
+<p>metadata.rb
+ - version
+ - set supported platforms
+ - set dependencies</p>
+
+<p>Berksfile
+ - Like Gemfile
+ - Like rubygems, cookbooks get installed (by default) ~/.berkshelf</p>
+
+<p>Deved under readme based development
+ - Works in verticals from the outside in
+ - Create it base on Service or Application
+ - Apply design patterns to all components</p>
+
+<p> Application Cookbook Pattern</p>
+
+<p> MyFace: LoadBalancer, app server, etc.
+  - They are all recipes.
+  - There are private / public recipes</p>
+
+<p> Favor Data-driven cookbooks:
+  - Change cookbooks behavior at runtime
+  - 3 ways to config: attributes, data bags, encrypted
+   - favors attributes
+   - data bags for org level : users, groups, yum/apt, things done by base cookbook</p>
+
+<p> Encapsulation:
+  - Build portable cookbooks.
+  - Stop using roles, not ver, cant be packed, org level data, not namespaced
+  - use Databags where they make sense and validate them
+  - default recipe is special; simply list includes.</p>
+
+<p> Library Cookbook Pattern:
+  - might have recipes
+  - contains lwrp, definitions, libraries</p>
+
+<p> Wrapper Cookbook Pattern:
+  - Super lightweight
+  - few recipes and attribute overrides</p>
+
+<p> Iteration Loops
+  - Make them as short as possible</p>
+
+<p>Coming soon&#8230; motherbrain!</p>
+
+<hr />
+
+<p>Vagrant</p>
+
+<p>A tool for creating, managing, and distributing a portable dev env.</p>
+
+<p>Perfect for iterative cookbook dev.</p>
+
+<p>dev / test / prod use the same cookbooks on the same OS.</p>
+
+<p>Vagrant Book coming out in July.</p>
+
+<p>0.1 released in 2010
+1.0 released in 2012
+1.1 released in 2013 (removes VirtualBox restriction)
+2.0 will be awesome</p>
+
+<p>Multi-provider
+ - A provider manages compute resources.
+ - in 1.0 only provider was vb
+ - in 1.1 many more: VB, Vmware, AWS, Rackspace, LXC</p>
+
+<p>Why?
+ - VB is not great for every situation (sucks)
+ - enables new and awesome things
+ - work in envs that work best for you</p>
+
+<p> CI:
+  - AWS, LXC</p>
+
+<p> Develop Locally, Test Remotely</p>
+
+<p> Deploys (not recommended)</p>
+
+<p>How?
+ - vagrant up &#8211;provider=aws</p>
+
+<p>Boxes are now tied to providers: AMI/metadata for AWS</p>
+
+<p>Provider specifc configs</p>
+
+<hr />
+
+<p>Lightning Rounds
+Application Automation Deployments</p>
+
+<p>Deployment Patterns:
+ - Starting / Stopping / Shipping of code</p>
+
+<ul>
+<li>Pull based deploys&#8230; deploy when ready, chef deploy resource</li>
+<li>fast / auto</li>
+<li><p>but limited in scope</p></li>
+<li><p>push based deploy&#8230; deploy when told</p></li>
+<li>complex workflows</li>
+<li>internode triggering</li>
+<li>leverage chef api</li>
+<li>retrofitable</li>
+<li>but another tool to manage</li>
+</ul>
+
+
+<p> Config patterns:
+  - storing config data
+  - deploying config data
+  - storage: roles, library / wrapper cookbooks</p>
+
+<p>Kanban for Operations
+Jeffery Hulten - Automated Labs @jhulten</p>
+
+<p>Keys: Pull based flow, Limit WIP
+Make unplanned work visable
+keep flow in one direction</p>
+
+<p>https://github.com/adamhjk/metarepo</p>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-28T17:06:00-04:00" pubdate data-updated="true">Apr 28<span>th</span>, 2013</time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kevinkarwaski.github.com/chefconf-2013-raw-notes/index.html" data-via="kevinkarwaski" data-counturl="http://kevinkarwaski.github.com/chefconf-2013-raw-notes/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/28/chefconf-2013-takeaways/">ChefConf 2013 - Roundup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/24/chefconf-2013-advanced-cookbook-authoring-workshop/">ChefConf 2013 - Advanced Cookbook Authoring Workshop</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/18/aws-summit-nyc-2013/">AWS Summit NYC - 2013</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/07/hello-world/">Hello world.</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/kevinkarwaski">@kevinkarwaski</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'kevinkarwaski',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/kevinkarwaski?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/kevinkarwaski">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Kevin Karwaski -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

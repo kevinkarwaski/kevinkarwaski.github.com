@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>AWS Summit NYC - 2013 - kevinkarwaski's Ops Blog</title>
+  <meta name="author" content="Kevin Karwaski">
+
+  
+  <meta name="description" content="Raw notes&#8230; At the AWS Summit, Vogels just took the stage. The persentation contains much of what we saw at AWS Re:Invent. Then:
+* 7 years ago, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://kevinkarwaski.github.com/blog/2013/04/18/aws-summit-nyc-2013">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="kevinkarwaski's Ops Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">kevinkarwaski's Ops Blog</a></h1>
+  
+    <h2>DevOps ramblings and other marginally useful information. These opinions are my own and do not reflect those of my employer, Fiksu.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:kevinkarwaski.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">AWS Summit NYC - 2013</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-18T09:43:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Raw notes&#8230;</p>
+
+<!-- more -->
+
+
+<p>At the AWS Summit, Vogels just took the stage. The persentation contains much of what we saw at AWS Re:Invent.</p>
+
+<p>Then:
+* 7 years ago, launched S3.</p>
+
+<p>Now:
+* 33 major services
+* AWS Marketplace - Pre-packaged software (25 categories / 778 products)
+* 31 Price Reductions since 2006! (Benefits of economies of scale)
+* AWS Trusted Advisor - Saved customers $22M last year</p>
+
+<p>Pace of innovation is the differentiator.
+53 New Services announcements in Q1 2013.</p>
+
+<p>Services:
+S3: 2T Objects; 1.1M peak reqs/sec
+EMR: 5.5M clusters launched since 5/10
+DynamoDB: Now announcing Local Secondary Indexes.</p>
+
+<p>DB always bottleneck in scaling.</p>
+
+<p>Transformation:
+What Drives it?
+* Success of CC: Addresses uncertainty - on demand, only use when needed, pay only for what you use, leverage core competencies, turn fixed cost into variable.</p>
+
+<ul>
+<li><p>Trade capital expense for variable.</p></li>
+<li><p>Reduce TCO. 70% reduced over 5 years. (Foursquare 50% reduction in analytics costs.)</p></li>
+<li><p>Elasticity.</p></li>
+<li><p>Increase innovation by reducing the cost of failure. exp often / fail quickly.</p></li>
+<li><p>Stop spending money on Undifferentiated heavy lifting.</p></li>
+<li><p>Go global in minutes.</p></li>
+</ul>
+
+
+<p>Russel - Bristol Myers Squib</p>
+
+<ul>
+<li>Created VPC / VPN connection from physical infra.</li>
+<li>Created custom java dash to control instances</li>
+<li>Custom AMIs</li>
+</ul>
+
+
+<p>The impact of AWS on clinical trials and studies is significant.</p>
+
+<p>who&#8217;s doing it</p>
+
+<p>Insurance: large variable capacity requirments.
+Farmers,
+Climate Corp: Weather Insurance: 5k cores EMR, 10k models, 5T data points (once a month), 15x data growth last year</p>
+
+<p>Financial Services: Regulatory / compliance / Sec Reqs.</p>
+
+<p>Nasdaq OMX / FirstSouthwest</p>
+
+<p>FinQloud - secure, industry only cloud that reduces tech burdens, aid in compliance, allows focus on revenue. It&#8217;s a wrapper around there data center and AWS via DirectConnect.</p>
+
+<p>FirstSouthwest - pub/corp finance / brokerage. FinQloud User.</p>
+
+<p>Media / Advertising: Revenue is below 1950&#8217;s level</p>
+
+<ul>
+<li>Race is on to monitze data&#8230; no kidding. :)</li>
+</ul>
+
+
+<p>Manufacturing: GE</p>
+
+<p>Built first commercial power grid in 1882.</p>
+
+<p>Evolution of connectivity</p>
+
+<p>Phase 1: People to people
+Phase 2: Assets to assets via AI (trillions of assets)</p>
+
+<p>Innovation limited by speed&#8230; Crowd Driven Ecosytem for Evolutionary Design. (CEED)</p>
+
+<p>Orchastrates distrbuted workflows; collaborative Federated env&#8230; first commercial use of GovCloud.</p>
+
+<p>Gene Sequencing: illunia
+DNA sequencing&#8230; streams up to S3 for data analysis. BaseSpace (https://basespace.illumina.com/home/index)</p>
+
+<p>1000 Genomes Project: 250TB available in S3</p>
+
+<p>Hospitality: Customer Service</p>
+
+<p>Four Seasons, Kempinski
+Hotelogix
+AirBNB</p>
+
+<p>what&#8217;s next</p>
+
+<p>Patterns for the furture&#8230; 70X the library of congress is collected on the first day of a baby&#8217;s life.</p>
+
+<p>Big Data:
+Move to real time
+Deeper integrations
+veritical app analytics
+hadoop will become invisible</p>
+
+<p>Mortar - aws startup winner
+oS framework
+Hadoop-as-a-service</p>
+
+<p>1.8M in Seed
+1000 Instances / $.5M/year</p>
+
+<p>Connected Devices:
+data generators
+device / content are independent (device is window to cloud data)
+increase workforce mobility</p>
+
+<p>Security and Privacy:
+readily avail encryption services
+VPC by Default
+ANNOUNCEMENT: RDS for Oracle - Transparent Data and native network encryption.</p>
+
+<p>=================================</p>
+
+<p>Into to Opsworks</p>
+
+<p>why use it?
+Simple - easy to use
+Productive - reduces error with conventions
+Flexibility - simplfies deploy
+Powerful - reduces cost / time automation
+Secure - fine grained permissions</p>
+
+<p>Case study: EasyBib</p>
+
+<ul>
+<li>Info literacy company</li>
+<li>different envs (dev)</li>
+</ul>
+
+
+<p>Higher Level Services:
+Beanstalk / Opsworks</p>
+
+<p>DIY:
+Cloudformation / EC2</p>
+
+<p>=====================================</p>
+
+<p>Disaster Recovery in the Cloud</p>
+
+<p>&#8220;The mind is not a vesel to be filled, but a fire to ignite.&#8221;</p>
+
+<p>BC
+High A -> backup storage -> disaster recovery</p>
+
+<p>Monastery and Indoctrination have correlaries.</p>
+
+<p>Lessons from Montecassino:
+* Backup should be accessable
+* Backup should be scalable
+* Backup should be safe
+* Should work with DR policy
+* Someone should care about it</p>
+
+<p>Case Study: Shaw Media
+Reach 20M+ canadians / week</p>
+
+<p>1M files would lose 1 file every 100K years&#8230; eleven 9s of durability.</p>
+
+<p>Test the god damn disaster recovery plan. &#8220;CloudFormer&#8221; to create Cloud Formation templates.</p>
+
+<p>=========================================</p>
+
+<p>Continuous Delivery with Opsworks</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Kevin Karwaski</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-18T09:43:00-04:00" pubdate data-updated="true">Apr 18<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/aws/'>AWS</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kevinkarwaski.github.com/blog/2013/04/18/aws-summit-nyc-2013/" data-via="kevinkarwaski" data-counturl="http://kevinkarwaski.github.com/blog/2013/04/18/aws-summit-nyc-2013/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/07/hello-world/" title="Previous Post: Hello world.">&laquo; Hello world.</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/04/24/chefconf-2013-advanced-cookbook-authoring-workshop/" title="Next Post: ChefConf 2013 - Advanced Cookbook Authoring Workshop">ChefConf 2013 - Advanced Cookbook Authoring Workshop &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/28/chefconf-2013-takeaways/">ChefConf 2013 - Roundup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/24/chefconf-2013-advanced-cookbook-authoring-workshop/">ChefConf 2013 - Advanced Cookbook Authoring Workshop</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/18/aws-summit-nyc-2013/">AWS Summit NYC - 2013</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/07/hello-world/">Hello world.</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/kevinkarwaski">@kevinkarwaski</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'kevinkarwaski',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/kevinkarwaski?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/kevinkarwaski">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Kevin Karwaski -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

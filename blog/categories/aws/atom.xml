@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: AWS | kevinkarwaski's Ops Blog]]></title>
+  <link href="http://kevinkarwaski.github.com/blog/categories/aws/atom.xml" rel="self"/>
+  <link href="http://kevinkarwaski.github.com/"/>
+  <updated>2013-04-28T19:54:21-04:00</updated>
+  <id>http://kevinkarwaski.github.com/</id>
+  <author>
+    <name><![CDATA[Kevin Karwaski]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AWS Summit NYC - 2013]]></title>
+    <link href="http://kevinkarwaski.github.com/blog/2013/04/18/aws-summit-nyc-2013/"/>
+    <updated>2013-04-18T09:43:00-04:00</updated>
+    <id>http://kevinkarwaski.github.com/blog/2013/04/18/aws-summit-nyc-2013</id>
+    <content type="html"><![CDATA[<p>Raw notes...</p>
+
+<!-- more -->
+
+
+<p>At the AWS Summit, Vogels just took the stage. The persentation contains much of what we saw at AWS Re:Invent.</p>
+
+<p>Then:
+* 7 years ago, launched S3.</p>
+
+<p>Now:
+* 33 major services
+* AWS Marketplace - Pre-packaged software (25 categories / 778 products)
+* 31 Price Reductions since 2006! (Benefits of economies of scale)
+* AWS Trusted Advisor - Saved customers $22M last year</p>
+
+<p>Pace of innovation is the differentiator.
+53 New Services announcements in Q1 2013.</p>
+
+<p>Services:
+S3: 2T Objects; 1.1M peak reqs/sec
+EMR: 5.5M clusters launched since 5/10
+DynamoDB: Now announcing Local Secondary Indexes.</p>
+
+<p>DB always bottleneck in scaling.</p>
+
+<p>Transformation:
+What Drives it?
+* Success of CC: Addresses uncertainty - on demand, only use when needed, pay only for what you use, leverage core competencies, turn fixed cost into variable.</p>
+
+<ul>
+<li><p>Trade capital expense for variable.</p></li>
+<li><p>Reduce TCO. 70% reduced over 5 years. (Foursquare 50% reduction in analytics costs.)</p></li>
+<li><p>Elasticity.</p></li>
+<li><p>Increase innovation by reducing the cost of failure. exp often / fail quickly.</p></li>
+<li><p>Stop spending money on Undifferentiated heavy lifting.</p></li>
+<li><p>Go global in minutes.</p></li>
+</ul>
+
+
+<p>Russel - Bristol Myers Squib</p>
+
+<ul>
+<li>Created VPC / VPN connection from physical infra.</li>
+<li>Created custom java dash to control instances</li>
+<li>Custom AMIs</li>
+</ul>
+
+
+<p>The impact of AWS on clinical trials and studies is significant.</p>
+
+<p>who's doing it</p>
+
+<p>Insurance: large variable capacity requirments.
+Farmers,
+Climate Corp: Weather Insurance: 5k cores EMR, 10k models, 5T data points (once a month), 15x data growth last year</p>
+
+<p>Financial Services: Regulatory / compliance / Sec Reqs.</p>
+
+<p>Nasdaq OMX / FirstSouthwest</p>
+
+<p>FinQloud - secure, industry only cloud that reduces tech burdens, aid in compliance, allows focus on revenue. It's a wrapper around there data center and AWS via DirectConnect.</p>
+
+<p>FirstSouthwest - pub/corp finance / brokerage. FinQloud User.</p>
+
+<p>Media / Advertising: Revenue is below 1950's level</p>
+
+<ul>
+<li>Race is on to monitze data... no kidding. :)</li>
+</ul>
+
+
+<p>Manufacturing: GE</p>
+
+<p>Built first commercial power grid in 1882.</p>
+
+<p>Evolution of connectivity</p>
+
+<p>Phase 1: People to people
+Phase 2: Assets to assets via AI (trillions of assets)</p>
+
+<p>Innovation limited by speed... Crowd Driven Ecosytem for Evolutionary Design. (CEED)</p>
+
+<p>Orchastrates distrbuted workflows; collaborative Federated env... first commercial use of GovCloud.</p>
+
+<p>Gene Sequencing: illunia
+DNA sequencing... streams up to S3 for data analysis. BaseSpace (https://basespace.illumina.com/home/index)</p>
+
+<p>1000 Genomes Project: 250TB available in S3</p>
+
+<p>Hospitality: Customer Service</p>
+
+<p>Four Seasons, Kempinski
+Hotelogix
+AirBNB</p>
+
+<p>what's next</p>
+
+<p>Patterns for the furture... 70X the library of congress is collected on the first day of a baby's life.</p>
+
+<p>Big Data:
+Move to real time
+Deeper integrations
+veritical app analytics
+hadoop will become invisible</p>
+
+<p>Mortar - aws startup winner
+oS framework
+Hadoop-as-a-service</p>
+
+<p>1.8M in Seed
+1000 Instances / $.5M/year</p>
+
+<p>Connected Devices:
+data generators
+device / content are independent (device is window to cloud data)
+increase workforce mobility</p>
+
+<p>Security and Privacy:
+readily avail encryption services
+VPC by Default
+ANNOUNCEMENT: RDS for Oracle - Transparent Data and native network encryption.</p>
+
+<p>=================================</p>
+
+<p>Into to Opsworks</p>
+
+<p>why use it?
+Simple - easy to use
+Productive - reduces error with conventions
+Flexibility - simplfies deploy
+Powerful - reduces cost / time automation
+Secure - fine grained permissions</p>
+
+<p>Case study: EasyBib</p>
+
+<ul>
+<li>Info literacy company</li>
+<li>different envs (dev)</li>
+</ul>
+
+
+<p>Higher Level Services:
+Beanstalk / Opsworks</p>
+
+<p>DIY:
+Cloudformation / EC2</p>
+
+<p>=====================================</p>
+
+<p>Disaster Recovery in the Cloud</p>
+
+<p>"The mind is not a vesel to be filled, but a fire to ignite."</p>
+
+<p>BC
+High A -> backup storage -> disaster recovery</p>
+
+<p>Monastery and Indoctrination have correlaries.</p>
+
+<p>Lessons from Montecassino:
+* Backup should be accessable
+* Backup should be scalable
+* Backup should be safe
+* Should work with DR policy
+* Someone should care about it</p>
+
+<p>Case Study: Shaw Media
+Reach 20M+ canadians / week</p>
+
+<p>1M files would lose 1 file every 100K years... eleven 9s of durability.</p>
+
+<p>Test the god damn disaster recovery plan. "CloudFormer" to create Cloud Formation templates.</p>
+
+<p>=========================================</p>
+
+<p>Continuous Delivery with Opsworks</p>
+]]></content>
+  </entry>
+  
+</feed>

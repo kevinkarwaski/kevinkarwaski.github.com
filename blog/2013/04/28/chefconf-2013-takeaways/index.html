@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello world. - kevinkarwaski's Ops Blog</title>
+  <title>ChefConf 2013 - Roundup - kevinkarwaski's Ops Blog</title>
   <meta name="author" content="Kevin Karwaski">
 
   
-  <meta name="description" content="This is my first blog post using Octopress. I really like this blogging engine so far&#8230; more to come. :)
-">
+  <meta name="description" content="Hot off the heals of ChefConf 2013 I wanted to take a moment to talk about some of the relevent takeaways. Many of the ideas my team and I have been &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kevinkarwaski.github.com/blog/2013/04/07/hello-world">
+  <link rel="canonical" href="http://kevinkarwaski.github.com/blog/2013/04/28/chefconf-2013-takeaways">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="kevinkarwaski's Ops Blog" type="application/atom+xml">
@@ -69,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Hello World.</h1>
+      <h1 class="entry-title">ChefConf 2013 - Roundup</h1>
     
     
       <p class="meta">
@@ -85,14 +84,65 @@
   
 
 
-<time datetime="2013-04-07T15:30:00-04:00" pubdate data-updated="true">Apr 7<span>th</span>, 2013</time>
+<time datetime="2013-04-28T16:29:00-04:00" pubdate data-updated="true">Apr 28<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>This is my first blog post using Octopress. I really like this blogging engine so far&#8230; more to come. :)</p>
+<div class="entry-content"><p>Hot off the heals of ChefConf 2013 I wanted to take a moment to talk about some of the relevent takeaways. Many of the ideas my team and I have been kicking around were loudly validated throughout the sessions and here are few worth mentioning&#8230;</p>
+
+<!-- more -->
+
+
+<h3>1. Use <a href="http://berkshelf.com/">Berkshelf</a> and <a href="http://www.vagrantup.com/">Vagrant</a>.</h3>
+
+<ul>
+<li>See <a href="https://twitter.com/resetexistence">Jamie Windsor&#8217;s</a> keynote at ChefConf 2013 on <a href="http://www.youtube.com/watch?v=hYt0E84kYUI">&#8220;The Berkshelf Way&#8221;</a></li>
+<li>See <a href="https://twitter.com/mitchellh">Mitchell Hashimoto&#8217;s</a> ChefConf 2013 session on Vagrant.</li>
+</ul>
+
+
+<p>For the last few months I&#8217;ve been trying to develop better Cookbook Authoring habits and cross team cookbook collaboration with the developer teams in my org. Using advanced tools like Berkshelf / Librarian / Vagrant to simplifiy cookbook dependency management and decrease the iteration testing cycle seemed like a natural fit.</p>
+
+<p>While I had kicked the tires of Librarian, I had not gone down the Berkshelf path which is unfortunate because Berkshelf was mentioned time and time again throughout many of the sessions. Indeed, it appears to be quickly becoming the defacto standard for cookbook dependency managment and development and for good reason.</p>
+
+<p>Its rich integration with Vagrant really makes it shine as a super efficient cookbook development tool. But in the end a tool is just a tool and without a planned development process or framework it remains just that; a tool.</p>
+
+<p>Enter &#8220;The Berkshelf Way&#8221; of cookbook development. It is fundamentally a <a href="http://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven Development</a> process. There are four main components:</p>
+
+<ul>
+<li><strong>Work in verticals from the outside in:</strong> Start with the application or end result and work your way back to the services and dependencies that actually drive the thing you are trying to develop. Create a cookbook for every single service of application you have. Apply common design patterns to each of the components in the cookbook.</li>
+</ul>
+
+
+<p>Cookbook Patterns: Application, Library and Wrapper</p>
+
+<ul>
+<li><p><strong>Favor Data Driven Cookbooks:</strong> Encourages the reuse of public cookbooks by changing the cookbooks behavior at runtime. Favor configuring with attributes rather than data bags -or- encrypted data bags. Only use data bags for org wide (base role) info: users, groups, apt/yum repos,</p></li>
+<li><p><strong>Write well-encapsulated cookbooks:</strong> Work on cookbooks in isolation so they can be as portable as possible. How do roles fit in? They don&#8217;t. Use a recipe instead. Roles aren&#8217;t versioned and typically contain org level data. What about data bags. Use them where they make sense. Always validate the databags.</p></li>
+<li><p><strong>Have short interation loops:</strong> Using the vagrant-berkshelf plugin you can provision and test the cookbooks extremely quickly.</p></li>
+</ul>
+
+
+<p>This is a fantastic tool and development process we&#8217;re hoping to adopt at my org.</p>
+
+<h3>2. Avoid the Chef Code Antipatterns.</h3>
+
+<p>See <a href="https://twitter.com/julian_dunn">Julian Dunn&#8217;s</a> session at ChefConf 2013 on Antipatterns.</p>
+
+<h3>3. Package everything.</h3>
+
+<p>More to come&#8230;</p>
+
+<h3>4. Treat your Infrastructure like Garbage&#8230; because it is.</h3>
+
+<p>More to come&#8230;</p>
+
+<h3>5. Don&#8217;t be a jackass; always use AWS AutoScale groups.</h3>
+
+<p>More to come&#8230;</p>
 </div>
 
 
@@ -115,21 +165,15 @@
   
 
 
-<time datetime="2013-04-07T15:30:00-04:00" pubdate data-updated="true">Apr 7<span>th</span>, 2013</time>
+<time datetime="2013-04-28T16:29:00-04:00" pubdate data-updated="true">Apr 28<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/useless-info/'>Useless Info</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kevinkarwaski.github.com/blog/2013/04/07/hello-world/" data-via="kevinkarwaski" data-counturl="http://kevinkarwaski.github.com/blog/2013/04/07/hello-world/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kevinkarwaski.github.com/blog/2013/04/28/chefconf-2013-takeaways/" data-via="kevinkarwaski" data-counturl="http://kevinkarwaski.github.com/blog/2013/04/28/chefconf-2013-takeaways/" >Tweet</a>
   
   
   
@@ -138,8 +182,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/04/24/chefconf-2013-advanced-cookbook-authoring-workshop/" title="Previous Post: ChefConf 2013 - Advanced Cookbook Authoring Workshop">&laquo; ChefConf 2013 - Advanced Cookbook Authoring Workshop</a>
       
-        <a class="basic-alignment right" href="/blog/2013/04/18/aws-summit-nyc-2013/" title="Next Post: AWS Summit NYC - 2013">AWS Summit NYC - 2013 &raquo;</a>
       
     </p>
   </footer>
