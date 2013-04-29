@@ -1,0 +1,184 @@
+---
+layout: post
+title: "AWS Summit NYC - 2013"
+date: 2013-04-18 09:43
+comments: true
+categories: [AWS] 
+---
+
+Raw notes...
+
+<!-- more -->
+
+At the AWS Summit, Vogels just took the stage. The persentation contains much of what we saw at AWS Re:Invent.
+
+Then:
+* 7 years ago, launched S3.
+
+Now:
+* 33 major services
+* AWS Marketplace - Pre-packaged software (25 categories / 778 products)
+* 31 Price Reductions since 2006! (Benefits of economies of scale)
+* AWS Trusted Advisor - Saved customers $22M last year
+
+Pace of innovation is the differentiator. 
+53 New Services announcements in Q1 2013.
+
+Services:
+S3: 2T Objects; 1.1M peak reqs/sec
+EMR: 5.5M clusters launched since 5/10
+DynamoDB: Now announcing Local Secondary Indexes.
+
+DB always bottleneck in scaling.
+
+Transformation:
+What Drives it?
+* Success of CC: Addresses uncertainty - on demand, only use when needed, pay only for what you use, leverage core competencies, turn fixed cost into variable.
+
+* Trade capital expense for variable.
+
+* Reduce TCO. 70% reduced over 5 years. (Foursquare 50% reduction in analytics costs.)
+
+* Elasticity.
+
+* Increase innovation by reducing the cost of failure. exp often / fail quickly.
+
+* Stop spending money on Undifferentiated heavy lifting.
+
+* Go global in minutes.
+
+Russel - Bristol Myers Squib
+
+* Created VPC / VPN connection from physical infra.
+* Created custom java dash to control instances
+* Custom AMIs
+
+
+The impact of AWS on clinical trials and studies is significant.
+
+
+who's doing it
+
+Insurance: large variable capacity requirments.
+Farmers, 
+Climate Corp: Weather Insurance: 5k cores EMR, 10k models, 5T data points (once a month), 15x data growth last year
+
+Financial Services: Regulatory / compliance / Sec Reqs.
+
+Nasdaq OMX / FirstSouthwest
+
+FinQloud - secure, industry only cloud that reduces tech burdens, aid in compliance, allows focus on revenue. It's a wrapper around there data center and AWS via DirectConnect.
+
+FirstSouthwest - pub/corp finance / brokerage. FinQloud User.
+
+
+Media / Advertising: Revenue is below 1950's level
+
+* Race is on to monitze data... no kidding. :)
+
+
+Manufacturing: GE
+
+Built first commercial power grid in 1882.
+
+Evolution of connectivity
+
+Phase 1: People to people
+Phase 2: Assets to assets via AI (trillions of assets)
+
+Innovation limited by speed... Crowd Driven Ecosytem for Evolutionary Design. (CEED)
+
+Orchastrates distrbuted workflows; collaborative Federated env... first commercial use of GovCloud.
+
+Gene Sequencing: illunia
+DNA sequencing... streams up to S3 for data analysis. BaseSpace (https://basespace.illumina.com/home/index)
+
+1000 Genomes Project: 250TB available in S3
+
+
+Hospitality: Customer Service
+
+Four Seasons, Kempinski
+Hotelogix
+AirBNB
+
+
+what's next
+
+Patterns for the furture... 70X the library of congress is collected on the first day of a baby's life.
+
+Big Data:
+Move to real time
+Deeper integrations
+veritical app analytics
+hadoop will become invisible
+
+Mortar - aws startup winner
+oS framework
+Hadoop-as-a-service
+
+1.8M in Seed
+1000 Instances / $.5M/year
+
+Connected Devices:
+data generators
+device / content are independent (device is window to cloud data)
+increase workforce mobility
+
+Security and Privacy:
+readily avail encryption services
+VPC by Default
+ANNOUNCEMENT: RDS for Oracle - Transparent Data and native network encryption.
+
+=================================
+
+Into to Opsworks
+
+why use it?
+Simple - easy to use
+Productive - reduces error with conventions
+Flexibility - simplfies deploy
+Powerful - reduces cost / time automation
+Secure - fine grained permissions
+
+Case study: EasyBib
+
+* Info literacy company
+* different envs (dev)
+
+Higher Level Services:
+Beanstalk / Opsworks
+
+DIY:
+Cloudformation / EC2
+
+=====================================
+
+Disaster Recovery in the Cloud
+
+"The mind is not a vesel to be filled, but a fire to ignite."
+
+BC
+High A -> backup storage -> disaster recovery
+
+Monastery and Indoctrination have correlaries.
+
+Lessons from Montecassino:
+* Backup should be accessable
+* Backup should be scalable
+* Backup should be safe
+* Should work with DR policy
+* Someone should care about it
+
+Case Study: Shaw Media
+Reach 20M+ canadians / week
+
+1M files would lose 1 file every 100K years... eleven 9s of durability.
+
+Test the god damn disaster recovery plan. "CloudFormer" to create Cloud Formation templates.
+
+=========================================
+
+Continuous Delivery with Opsworks
+
+
