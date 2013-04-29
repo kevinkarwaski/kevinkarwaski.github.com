@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: berkshelf | kevinkarwaski's Ops Blog]]></title>
+  <link href="http://kevinkarwaski.github.com/blog/categories/berkshelf/atom.xml" rel="self"/>
+  <link href="http://kevinkarwaski.github.com/"/>
+  <updated>2013-04-28T20:04:02-04:00</updated>
+  <id>http://kevinkarwaski.github.com/</id>
+  <author>
+    <name><![CDATA[Kevin Karwaski]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ChefConf 2013 - Roundup]]></title>
+    <link href="http://kevinkarwaski.github.com/blog/2013/04/28/chefconf-2013-takeaways/"/>
+    <updated>2013-04-28T16:29:00-04:00</updated>
+    <id>http://kevinkarwaski.github.com/blog/2013/04/28/chefconf-2013-takeaways</id>
+    <content type="html"><![CDATA[<p>Hot off the heals of ChefConf 2013 I wanted to take a moment to talk about some of the relevent takeaways. Many of the ideas my team and I have been kicking around were loudly validated throughout the sessions and here are few worth mentioning...</p>
+
+<!-- more -->
+
+
+<h3>1. Use <a href="http://berkshelf.com/">Berkshelf</a> and <a href="http://www.vagrantup.com/">Vagrant</a>.</h3>
+
+<ul>
+<li>See <a href="https://twitter.com/resetexistence">Jamie Windsor's</a> keynote at ChefConf 2013 on <a href="http://www.youtube.com/watch?v=hYt0E84kYUI">"The Berkshelf Way"</a></li>
+<li>See <a href="https://twitter.com/mitchellh">Mitchell Hashimoto's</a> ChefConf 2013 session on Vagrant.</li>
+</ul>
+
+
+<p>For the last few months I've been trying to develop better Cookbook Authoring habits and cross team cookbook collaboration with the developer teams in my org. Using advanced tools like Berkshelf / Librarian / Vagrant to simplifiy cookbook dependency management and decrease the iteration testing cycle seemed like a natural fit.</p>
+
+<p>While I had kicked the tires of Librarian, I had not gone down the Berkshelf path which is unfortunate because Berkshelf was mentioned time and time again throughout many of the sessions. Indeed, it appears to be quickly becoming the defacto standard for cookbook dependency managment and development and for good reason.</p>
+
+<p>Its rich integration with Vagrant really makes it shine as a super efficient cookbook development tool. But in the end a tool is just a tool and without a planned development process or framework it remains just that; a tool.</p>
+
+<p>Enter "The Berkshelf Way" of cookbook development. It is fundamentally a <a href="http://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven Development</a> process. There are four main components:</p>
+
+<ul>
+<li><strong>Work in verticals from the outside in:</strong> Start with the application or end result and work your way back to the services and dependencies that actually drive the thing you are trying to develop. Create a cookbook for every single service of application you have. Apply common design patterns to each of the components in the cookbook.</li>
+</ul>
+
+
+<p>Cookbook Patterns: Application, Library and Wrapper</p>
+
+<ul>
+<li><p><strong>Favor Data Driven Cookbooks:</strong> Encourages the reuse of public cookbooks by changing the cookbooks behavior at runtime. Favor configuring with attributes rather than data bags -or- encrypted data bags. Only use data bags for org wide (base role) info: users, groups, apt/yum repos,</p></li>
+<li><p><strong>Write well-encapsulated cookbooks:</strong> Work on cookbooks in isolation so they can be as portable as possible. How do roles fit in? They don't. Use a recipe instead. Roles aren't versioned and typically contain org level data. What about data bags. Use them where they make sense. Always validate the databags.</p></li>
+<li><p><strong>Have short interation loops:</strong> Using the vagrant-berkshelf plugin you can provision and test the cookbooks extremely quickly.</p></li>
+</ul>
+
+
+<p>This is a fantastic tool and development process we're hoping to adopt at my org.</p>
+
+<h3>2. Avoid the Chef Code Antipatterns.</h3>
+
+<p>See <a href="https://twitter.com/julian_dunn">Julian Dunn's</a> session at ChefConf 2013 on Antipatterns.</p>
+
+<h3>3. Package everything.</h3>
+
+<p>More to come...</p>
+
+<h3>4. Treat your Infrastructure like Garbage... because it is.</h3>
+
+<p>More to come...</p>
+
+<h3>5. Don't be a jackass; always use AWS AutoScale groups.</h3>
+
+<p>More to come...</p>
+]]></content>
+  </entry>
+  
+</feed>
